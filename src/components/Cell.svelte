@@ -39,9 +39,19 @@
       e.preventDefault()
     }
   }
+
+  function handleChange() {
+    if (String(Number(cell.value)) == cell.value) {
+      cell.type = "number"
+    } else if (cell.value.substring(0, 1) == "="){
+      cell.type = "expr"
+    } else {
+      cell.type = "text"
+    }
+  }
 </script>
 
-<input use:persist={cell} bind:this={node} class:edit={mode == 'edit'} readonly={mode == 'display'} on:keydown={handleKeydown} bind:value={cell.value}/>
+<input use:persist={cell} bind:this={node} class:edit={mode == 'edit'} on:change={handleChange} class={cell.type} readonly={mode == 'display'} on:keydown={handleKeydown} bind:value={cell.value}/>
 
 <style>
   input {

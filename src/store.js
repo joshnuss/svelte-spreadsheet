@@ -5,8 +5,16 @@ export const position = writable({row: 0, column: 0})
 export const data = writable({
   columns: ['A', 'B', 'C'],
   rows: [
-    [{value: '1'},{value: '2'}, {value: '3'}],
-    [{value: '4'},{value: '5'}, {value: '6'}],
+    [
+      {value: '1', type: 'number'},
+      {value: '2', type: 'number'},
+      {value: '3', type: 'number'}
+    ],
+    [
+      {value: '4', type: 'number'},
+      {value: '5', type: 'number'},
+      {value: '=A2 + B2', type: 'expr'}
+    ],
   ]
 })
 
