@@ -10,7 +10,7 @@ export const data = writable({
   ]
 })
 
-function focus(row, column) {
+export function focus(row, column) {
   const {rows} = get(data)
 
   rows[row][column].node.focus()

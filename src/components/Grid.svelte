@@ -1,6 +1,6 @@
 <script>
   import Cell from './Cell.svelte'
-  import {data} from '../store'
+  import {data, focus} from '../store'
 
   function persist(node, cell) {
     cell.node = node
@@ -22,7 +22,9 @@
         <th>{i+1}</th>
 
         {#each row as cell, j}
-          <td class="input" tabindex={i} use:persist={cell}><Cell bind:cell={cell}/></td>
+          <td class="input" tabindex={i} use:persist={cell} on:click|preventDefault={() => focus(i, j)}>
+            <Cell bind:cell={cell}/>
+          </td>
         {/each}
       </tr>
     {/each}
