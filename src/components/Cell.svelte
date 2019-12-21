@@ -1,4 +1,8 @@
-<span>11</span>
+<script>
+  export let cell
+</script>
+
+<span>{cell.value}</span>
 
 <style>
   input {
