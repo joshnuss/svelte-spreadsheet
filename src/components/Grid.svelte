@@ -1,26 +1,27 @@
 <script>
   import Cell from './Cell.svelte'
+  import {data} from '../store'
 </script>
 
 <table>
   <thead>
     <tr>
       <th width="60"/>
-      <th>A</th>
-      <th>B</th>
+      {#each $data.columns as column}
+        <th>{column}</th>
+      {/each}
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th>1</th>
-      <td class="input" tabindex="1"><Cell/></td>
-      <td class="input" tabindex="1"><Cell/></td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td class="input" tabindex="2"><Cell/></td>
-      <td class="input" tabindex="2"><Cell/></td>
-    </tr>
+    {#each $data.rows as row, i}
+      <tr>
+        <th>{i+1}</th>
+
+        {#each row as cell, j}
+          <td class="input" tabindex={j}><Cell/></td>
+        {/each}
+      </tr>
+    {/each}
   </tbody>
 </table>
 
