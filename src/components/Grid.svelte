@@ -37,7 +37,11 @@
 
   table th {
     background: #ccc;
-    padding: 0.2em;
+    padding: 0.3em;
+  }
+
+  table tbody th {
+    text-align: right
   }
 
   table tr.header {
