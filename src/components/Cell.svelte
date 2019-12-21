@@ -33,6 +33,9 @@
     if (mode == "display" && navKeys.indexOf(e.key) == -1 && isCharacterKeyPress(e)) {
       mode = "edit"
       node.select()
+
+      cell.value = e.key
+
       e.preventDefault()
     }
   }
