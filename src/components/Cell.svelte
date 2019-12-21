@@ -12,7 +12,7 @@
     if (typeof evt.which == "undefined") {
       return true
     } else if (typeof evt.which == "number" && evt.which > 0) {
-      return !evt.ctrlKey && !evt.metaKey && !evt.altKey && evt.which != 8;
+      return !evt.ctrlKey && !evt.metaKey && !evt.altKey && evt.which != 8 && evt.key != 'Tab' && evt.key != 'Shift' && evt.key != 'Shift'
     }
     return false
   }
