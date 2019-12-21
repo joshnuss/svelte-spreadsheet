@@ -18,7 +18,7 @@
         <th>{i+1}</th>
 
         {#each row as cell, j}
-          <td class="input" on:click|preventDefault={() => focus(i, j)}>
+          <td class="input" on:click|preventDefault|stopPropagation={() => focus(i, j)}>
             <Cell bind:cell={cell}/>
           </td>
         {/each}
