@@ -49,5 +49,18 @@ export function moveDown() {
 
   if (row < rows.length-1) {
     focus(row+1, column)
+  } else {
+    appendRow()
+    setTimeout(() => {
+      focus(row+1, column)
+    }, 0)
   }
+}
+
+function appendRow() {
+  data.update(data => {
+    const row = data.columns.map(() => ({value: ''}))
+    data.rows.push(row)
+    return data
+  })
 }
