@@ -25,9 +25,6 @@
 </table>
 
 <style>
-  :global(body) {
-    padding: 0;
-  }
   table {
     border-collapse: collapse;
     border-spacing: 0px;
