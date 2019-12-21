@@ -1,6 +1,10 @@
 <script>
   import Cell from './Cell.svelte'
   import {data} from '../store'
+
+  function persist(node, cell) {
+    cell.node = node
+  }
 </script>
 
 <table>
@@ -18,7 +22,7 @@
         <th>{i+1}</th>
 
         {#each row as cell, j}
-          <td class="input" tabindex={i}><Cell bind:cell={cell}/></td>
+          <td class="input" tabindex={i} use:persist={cell}><Cell bind:cell={cell}/></td>
         {/each}
       </tr>
     {/each}
