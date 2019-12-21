@@ -18,7 +18,7 @@
         <th>{i+1}</th>
 
         {#each row as cell, j}
-          <td class="input" tabindex={j}><Cell bind:cell={cell}/></td>
+          <td class="input" tabindex={i}><Cell bind:cell={cell}/></td>
         {/each}
       </tr>
     {/each}
