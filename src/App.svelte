@@ -1,6 +1,6 @@
 <script>
   import Grid from './components/Grid.svelte'
-  import {moveRight, moveLeft, moveUp, moveDown} from './store'
+  import {focus, moveRight, moveLeft, moveUp, moveDown} from './store'
 
   function handleKeydown(e){
     switch(e.key) {
@@ -19,13 +19,13 @@
 
       default:
         return
-
     }
+
     e.preventDefault()
   }
 </script>
 
-<svelte:window on:keydown={handleKeydown}/>
+<svelte:window on:keydown={handleKeydown} on:click={() => focus(0, 0)}/>
 
 <main>
   <Grid/>
